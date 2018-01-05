@@ -40,8 +40,14 @@
    }
    #header {
      width: 100%;
-     height: 500px;
-     text-align: center;
+     height: 80px;
+     background-color: black;
+   }
+
+   #main {
+    width: 100%;
+    height: 500px;
+    text-align: center;
    }
 
    #footer {

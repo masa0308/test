@@ -14,7 +14,7 @@
  <meta charset="utf-8">
  <title>UserCreate画面</title>
  <style type="text/css">
-    /* ========TAG LAYPUT======== */
+    /* ========TAG LAYOUT======== */
     body {
       margin:0;
       padding:0;
@@ -45,6 +45,12 @@
     }
 
     #main {
+       width: 100%;
+       height: 500px;
+       text-align: center;
+    }
+
+    #footer {
        width: 100%;
        height: 80px;
        background-color: black;
@@ -78,6 +84,14 @@
      <tr>
       <td>
        <label>ログインPASS:</label>
+      </td>
+      <td>
+      <input type="text" name="loginPassword" value="" />
+      </td>
+      </tr>
+      <tr>
+      <td>
+      <label>ユーザー名:</label>
       </td>
       <td>
        <input type="text" name="userName" value="" />

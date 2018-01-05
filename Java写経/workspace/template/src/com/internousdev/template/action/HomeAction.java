@@ -8,7 +8,7 @@ public class HomeAction extends ActionSupport {
 	 * ログインボタン押下時に実行
 	 * ログイン画面へ遷移します。
 	 *
-	 * @return String execute()
+	 * @return SUCCESS()
 	 */
 	public String execute(){
 		return SUCCESS;

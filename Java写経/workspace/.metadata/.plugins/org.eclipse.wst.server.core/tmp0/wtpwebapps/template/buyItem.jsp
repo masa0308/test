@@ -46,7 +46,7 @@
    #main{
     width: 100%;
     height: 500px;
-    text-align: centerl;
+    text-align: center;
    }
 
    #footer{
@@ -113,16 +113,16 @@
      <td>
       <s:submit value="購入" />
      </td>
+     </tr>
   </table>
   </s:form>
    <div>
     <span>前画面に戻る場合は</span><a href='<s:url action="HomeAction" />'>こちら</a>
    </div>
  </div>
-
+ </div>
  <div id="footer">
   <div id="pr">
-  </div>
  </div>
  </div>
 </body>

@@ -13,7 +13,7 @@ import com.opensymphony.xwork2.ActionSupport;
 /**
  * ログイン認証処理
  * Login.jspからログインID、ログインパスワードを受け取り
- * DBへ問い合わせを行います、
+ * DBへ問い合わせを行います。
  *
  * @author internous
  * @param loginUserId
