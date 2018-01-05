@@ -1,0 +1,31 @@
+body{
+    background-color: lightgray;
+    }
+
+.content{
+         margin: 0 auto;
+         width: 640px;
+         background-color: white;
+         border: solid 1px;
+         height: auto;
+         overflow: hidden;
+        
+    }
+
+.box1{
+      width: 30%;
+      float: left;
+      padding: 5px;
+     }
+h1{
+   font-size: 10px;     
+}
+.box2{
+      width: 65%;
+      border-left: solid orange 5px;
+      float: left;
+      padding-left: 5px;
+}
+.clear{
+       clear: left;
+      }

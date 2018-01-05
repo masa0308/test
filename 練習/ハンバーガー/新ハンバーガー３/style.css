@@ -1,0 +1,109 @@
+body{
+     margin: 0;
+     padding: 0;
+}
+
+.header{ margin: 0 auto;
+         height: 60px;
+         line-height: 60px;
+         background: blue;
+         color: white;
+         width: 1000px;
+         text-align: center;
+    }
+
+.content{
+         width: 1000px;
+         margin: 0 auto;
+    
+}
+ul{ height: 30px;
+    text-align: center;
+    line-height: 30px;
+    margin-left: -40px;
+    list-style: none;
+    margin-top: 0px;
+    margin-bottom: 0px;
+   }
+li{
+    background: green;
+    width: 248px;
+    color: white;
+    float:left;
+    border: solid 1px black;
+    }
+input[type="checkbox"].on-off{
+    display: none;
+}
+
+
+/* ウィンドウ幅が0〜479pxの場合に適用するCSS */
+@media screen and ( max-width:479px )
+{ .header {width: 479px;
+    }
+ label {
+    float: right;
+    background: green;
+    padding: 10px;
+    margin-top: 10px;
+    border: 1px solid #fff;
+    height: 18px;
+    width: 40px;
+    position: relative;
+    right:5%;
+}
+ .top,.middle,.bottom{
+        position: absolute;
+        background: white;
+         height: 5px;
+         width: 30px;
+         cursor: pointer;
+    }
+    .top{
+         top: 3px;
+         margin-left: 5px;
+    }
+    .middle{
+         bottom:19px;
+         margin-left: 5px;
+    }
+    .bottom{ bottom:5px;
+             margin-left: 5px;
+    }
+
+.content ul {
+    transition: .3s ease-in-out;
+    -webkit-transform: translateY(0%);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+
+.content li {
+    background: yellow;
+    height: 200px;
+    width: 400px;
+    padding: 5px;
+    border: solid;
+    float: none;
+    margin-left: 0;
+}
+
+input[type="checkbox"].on-off + .nav ul{
+    height: 0;
+    overflow: hidden;
+}
+
+input[type="checkbox"].on-off:checked + .nav ul{
+    height: 1200px;
+}
+
+}
+
+
+
+
+.clear{
+    clear: left;
+}

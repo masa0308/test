@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app ximns:xsi="http://www.w3.org/2001/XMLschema-instance"
+xmins="http://xmins.jcp.org/xml/ns/javaee"
+xsi:schemaLocation="http://ximns.jcp.org/xml/ns/javaee
+http://xmins.jcp.org/xml/ns/javaee/web-app_3_1.xsd" id="WebApp_ID" version="3.1">
+
+<display-name>HelloJSP</display-name>
+<welcome-file-list>
+<welcome-file>index6.jsp</welcome-file>
+</welcome-file-list>
+</web-app>

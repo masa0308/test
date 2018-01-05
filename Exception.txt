@@ -1,0 +1,32 @@
+try{
+
+// 監視される範囲
+
+}catch(Exception e){
+
+// 想定外のエラーが発生した場合の処理
+
+e.printStackTrace();
+
+}
+
+
+-----------------------
+
+Exception　　　　　－－－－－－＞例外判定の情報を担う部品（クラス）
+｜
+｜IOException
+｜SQLException
+｜ClassNotFoundException
+｜・
+｜・
+｜・
+
+
+
+-----------------------
+
+throws と　try-catch
+
+try-catchのほうがすぐに判定処理をおこなう。
+throwsはtry内の処理が終わったあとに判定処理をおこなう。

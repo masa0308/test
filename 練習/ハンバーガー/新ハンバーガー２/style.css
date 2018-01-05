@@ -1,0 +1,109 @@
+.header{
+      width: 1000px;
+      height: 60px;
+      text-align:center;
+      line-height: 60px;
+      margin: 0 auto;
+      background: blue;
+      color: white;
+    
+    
+}
+.content{ margin: 0 auto;
+          width: 1000px;
+}
+ul { display: table;
+     height: 50px;
+     text-align: center;
+     line-height: 50px;
+     width: 1000px;
+     margin-left: -40px;
+     margin-top: 0px;
+     margin-bottom: 0px;
+    
+    
+     
+}
+li{ display: table-cell;
+    background: green;
+    border: solid 1px black;
+    }
+
+input[type="checkbox"].on-off{
+    display: none;
+}
+.clear{ clear: left;}
+
+/* ウィンドウ幅が0〜479pxの場合に適用するCSS */
+@media screen and ( max-width:479px )
+{
+    .header{
+            width: 479px;
+        }
+          
+    }
+label {
+    float: right;
+    background: green;
+    color: #fff;
+    padding: 10px;
+    display: block;
+    margin: 0;
+    margin-top: 0px;
+    border: 1px solid #fff;
+    height: 18px;
+    width: 40px;
+    position: relative;
+}
+ .top,.middle,.bottom{
+        position: absolute;
+        background: white;
+         height: 5px;
+         width: 30px;
+         cursor: pointer;
+    }
+    .top{
+         top: 3px;
+         margin-left: 5px;
+    }
+    .middle{
+         bottom:19px;
+         margin-left: 5px;
+    }
+    .bottom{ bottom:5px;
+             margin-left: 5px;
+    }
+input[type="checkbox"].on-off{
+    display: none;
+}
+
+
+ul {
+    transition: .3s ease-in-out;
+    -webkit-transform: translateY(0%);
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    
+}
+
+li {
+    display: table-row;
+
+    height: 100px;
+    width: 479px;
+    padding: 5px;
+    border: solid;
+    float: none;
+    margin-left: 0;
+}
+
+input[type="checkbox"].on-off + ul{
+    height: 0;
+    overflow: hidden;
+}
+
+input[type="checkbox"].on-off:checked + ul{
+    height: 1200px;
+}
+}

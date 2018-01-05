@@ -1,0 +1,110 @@
+body{ margin:0;
+      padding: 0;
+}
+
+.header{
+        height: 60px;
+        line-height: 60px;
+        text-align: center;
+        background: lightblue;
+        font-size: 40px;
+        width: 1000px;
+        margin: 0 auto;
+}
+.content{width: 1000px;
+      margin: 0 auto;
+      height: auto;
+    
+}
+.nav{ 
+     margin: 0 auto;
+     width: 1000px;
+     height: auto;
+}
+.nav1{
+    text-align: center;
+    line-height: 30px;
+    list-style: none;
+    margin-left: -40px;
+    margin-top: 0;
+    margin-bottom: 0;}
+.nav2{  height: 30px;
+    float: left;
+    border: solid 1px black;
+    width: 247px;
+    background: green;
+}
+.maingazo{
+       
+        width: 1000px;
+       
+        margin: 0 auto;
+}
+
+input[type="checkbox"].on-off{
+    display: none;
+}
+/* ウィンドウ幅が0〜479pxの場合に適用するCSS */
+@media screen and ( max-width:479px )
+{
+    .header{
+        width: 479px;
+        font-size: 30px;
+    }
+    .nav{width: 479px;
+        
+        }
+
+    .nav ul{
+        transition: .3s ease-in-out;
+        -webkit-transform: translateY(0%);
+        margin: 0;
+        padding: 0;
+    }
+    
+    .nav li{
+        float:none;
+        height: 50px;
+        width: 479px;
+        border-color: white;
+        line-height: 50px;
+    }
+    label{
+        float: right;
+        height: 40px;
+        width: 40px;
+        border-radius: 5px;
+        background: pink;
+        position: relative;
+        margin-right: 20px;
+        margin-top: 10px;
+    }
+    .bar{
+        height: 3px;
+        width: 30px;
+        right: 5px;
+        background: white;
+        position: absolute;
+    }
+    #top{top: 10px;}
+    #middle{top: 20px;}
+    #bottom{top: 30px;}
+    
+#panel1 ~  ul.nav1{
+    height: 0;
+    overflow: hidden;
+}
+
+#panel1:checked ~ ul.nav1{
+    height: auto;
+}
+    li img{ width: 469px;}
+}
+
+
+
+
+
+
+
+
