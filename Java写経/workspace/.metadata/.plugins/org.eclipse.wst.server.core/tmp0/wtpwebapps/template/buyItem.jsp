@@ -93,7 +93,7 @@
                 <span>購入個数</span>
             </td>
             <td>
-                <select name="count">
+                <select name="stock">
                   <option value="1" selected="selected">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>

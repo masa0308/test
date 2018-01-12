@@ -40,7 +40,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 		int intStock = Integer.parseInt(session.get("stock").toString());
 		int intPrice = Integer.parseInt(session.get("buyItem_price").toString());
 
-		session.put("buyItem_price", intStock * intPrice);
+		session.put("total_price", intStock * intPrice);
 		String payment;
 
 		if(pay.equals("1")) {
