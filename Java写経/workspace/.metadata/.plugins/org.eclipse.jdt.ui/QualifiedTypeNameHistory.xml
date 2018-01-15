@@ -10,4 +10,5 @@
 <fullyQualifiedTypeName name="com.mysql.jdbc.PreparedStatement"/>
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="com.internousdev.template.util.DBConnector"/>
+<fullyQualifiedTypeName name="com.sun.javafx.binding.SetExpressionHelper"/>
 </qualifiedTypeNameHistroy>

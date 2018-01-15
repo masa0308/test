@@ -34,11 +34,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private String loginPassword;
 
 	/**
-	 * 処理結果を格納
-	 */
-	private String result;
-
-	/**
 	 * ログイン情報を格納
 	 */
 	public Map<String, Object> session;
@@ -52,7 +47,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	 * ログイン情報格納DTO
 	 */
 	private LoginDTO loginDTO = new LoginDTO();
-
 	/**
 	 * アイテム情報を取得
 	 */
@@ -61,12 +55,12 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	/**
 	 * 実行メソッド
 	 */
-	public String execute(){
+	public String execute() {
 
-		result = ERROR;
+		String result = ERROR;
 
 		// ログイン実行
-		loginDTO = loginDAO.getLoginUserInfo(loginUserId, loginPassword);
+		loginDTO = loginDAO.getLoginUserInfo(loginUserId,loginPassword);
 
 		session.put("loginUser", loginDTO);
 
@@ -76,7 +70,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 			// アイテム情報を取得
 			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
-			session.put("login_user_id",    loginDTO.getLoginId());
+			session.put("login_user_id",  loginDTO.getLoginId());
 			session.put("id", buyItemDTO.getId());
 			session.put("buyItem_name", buyItemDTO.getItemName());
 			session.put("buyItem_price", buyItemDTO.getItemPrice());
@@ -85,10 +79,9 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		}
 
 		return result;
-
 	}
 
-	public String getLoginUserId(){
+	public String getLoginUserId() {
 		return loginUserId;
 	}
 
@@ -108,5 +101,4 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
 }
