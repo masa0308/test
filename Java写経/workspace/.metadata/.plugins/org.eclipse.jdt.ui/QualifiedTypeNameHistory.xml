@@ -11,4 +11,5 @@
 <fullyQualifiedTypeName name="java.sql.ResultSet"/>
 <fullyQualifiedTypeName name="com.internousdev.template.util.DBConnector"/>
 <fullyQualifiedTypeName name="com.sun.javafx.binding.SetExpressionHelper"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.util.DBConnector"/>
 </qualifiedTypeNameHistroy>

@@ -27,7 +27,8 @@ public class LoginDAO {
 		String sql = "SELECT * FROM login_user_transaction where login_id = ? AND login_pass = ?";
 
 		try {
-			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			PreparedStatement preparedStatement =
+			connection.prepareStatement(sql);
 			preparedStatement.setString(1, loginUserId);
 			preparedStatement.setString(2, loginPassword);
 
@@ -35,14 +36,15 @@ public class LoginDAO {
 
 			if(resultSet.next()) {
 				loginDTO.setLoginId(resultSet.getString("login_id"));
+
 				loginDTO.setLoginPassword(resultSet.getString("login_pass"));
+
 				loginDTO.setUserName(resultSet.getString("user_name"));
 
 				if(!(resultSet.getString("login_id").equals(null))) {
 					loginDTO.setLoginFlg(true);
 				}
 			}
-
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
@@ -51,6 +53,6 @@ public class LoginDAO {
 	}
 
 	public LoginDTO getLoginDTO() {
-		return loginDTO;
+	   return loginDTO;
 	}
 }
