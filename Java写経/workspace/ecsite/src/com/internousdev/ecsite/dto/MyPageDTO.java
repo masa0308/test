@@ -24,7 +24,7 @@ public class MyPageDTO {
 		this.itemName = itemName;
 	}
 
-	public String getTotalPrice() {
+	public String getTotalPrice(){
 		return totalPrice;
 	}
 
@@ -52,7 +52,7 @@ public class MyPageDTO {
 		return userName;
 	}
 
-	public void setUserName(String userName) {
+	public void setUesrName(String userName) {
 		this.userName = userName;
 	}
 
@@ -71,5 +71,4 @@ public class MyPageDTO {
 	public void setInsert_date(String insert_date) {
 		this.insert_date = insert_date;
 	}
-
 }

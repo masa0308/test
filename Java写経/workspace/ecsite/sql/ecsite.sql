@@ -1,3 +1,5 @@
+set names utf8;
+set foreign_key_checks = 0;
 drop database if exists ecsite;
 
 create database if not exists ecsite;
@@ -38,6 +40,5 @@ insert_date datetime,
 delete_date datetime
 );
 
-
-INSERT INTO item_info_transaction(item_name, item_price, item_stock) VALUES("NoteBook", 100, 50);
+INSERT INTO item_info_transaction(item_name, item_price, item_stock) VALUES("Notebook", 100, 50);
 INSERT INTO login_user_transaction(login_id, login_pass, user_name) VALUES("internous", "internous01", "test");
