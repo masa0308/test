@@ -12,7 +12,7 @@ public class InquiryCompleteAction extends ActionSupport{
 
 	public String execute() {
 		String ret=ERROR;
-		InquiryCompleteDAO dao=new InquiryCompleteDAO();
+		InquiryCompleteDAO dao = new InquiryCompleteDAO();
 		int count= dao.insert(name, qtype, body);
 		if(count > 0){
 			ret=SUCCESS;
@@ -31,7 +31,7 @@ public class InquiryCompleteAction extends ActionSupport{
 		return qtype;
 	}
 
-	public String setQtype(String qtype) {
+	public void setQtype(String qtype) {
 		this.qtype = qtype;
 	}
 

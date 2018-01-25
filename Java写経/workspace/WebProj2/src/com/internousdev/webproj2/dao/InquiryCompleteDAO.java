@@ -19,7 +19,7 @@ public class InquiryCompleteDAO {
 			ps.setString(2, qtype);
 			ps.setString(3, body);
 			int i = ps.executeUpdate();
-			if(i > 0) {
+			if (i > 0) {
 				System.out.println(i + "件登録されました");
 				ret = i;
 			}
