@@ -1,0 +1,11 @@
+select * from users 
+userテーブルからすべての列情報を持ってきてください。
+条件はありません。
+
+where user_name=? and password=?
+ユーザーネームは？
+パスワードは？のものを持ってきてください。
+
+select * from users where user_name=? and password=?
+userテーブルからすべての列情報を持ってきてください。
+ただし、ユーザーネームは？パスワードは？のものを持ってきてください。

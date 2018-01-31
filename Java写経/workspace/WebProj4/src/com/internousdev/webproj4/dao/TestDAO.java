@@ -19,12 +19,20 @@ public class TestDAO {
 		DBConnector db = new DBConnector();
 		Connection con = db.getConnection();
 
+		// SQL文の作成（未完成）
 		String sql = "insert into users(user_name, password) values(?,?)";
 		try {
+			// SQL文を入れ物（PreparedStatement）にセット
 			PreparedStatement ps = con.prepareStatement(sql);
+
+			// 入れ物の? の1番目にuerNameをセットする。
 			ps.setString(1, username);
+			// 入れ物の? の2番目にpasswordをセットする。
 			ps.setString(2, password);
+
+			// 更新または挿入を実行
 			int i = ps.executeUpdate();
+
 			if (i > 0) {
 				System.out.println(i + "件登録されました");
 				ret = i;
