@@ -15,7 +15,7 @@
   <meta charset="utf-8">
   <title>BuyItem画面</title>
   <style type="text/css">
-  /* =========TAG LATOUT======== */
+  /* =========TAG LAYOUT======== */
     body {
       margin:0;
       padding:0;
@@ -123,10 +123,11 @@
         <p>マイページは<a href='<s:url action="MyPageAction"/>'>こちら</a></p>
      </div>
     </div>
+     </div>
     <div id="footer">
       <div id="pr">
       </div>
-    </div>
+
 
   </div>
 </body>
