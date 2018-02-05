@@ -26,8 +26,7 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	/**
 	 * マイページ情報格納DTO
 	 */
-	public ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>
-	();
+	public ArrayList<MyPageDTO> myPageList = new ArrayList<MyPageDTO>();
 
 	/**
 	 * 削除フラグ
@@ -49,14 +48,11 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 
 		// 商品履歴を削除しない場合
 		if(deleteFlg == null) {
-			String item_transaction_id =
-		    session.get("id").toString();
+			String item_transaction_id = session.get("id").toString();
 			String user_master_id =
 			session.get("login_user_id").toString();
 
-			myPageList =
-			myPageDAO.getMyPageUserInfo(item_transaction_id,
-			user_master_id);
+			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
 
 			Iterator<MyPageDTO> iterator = myPageList.iterator();
 			if(!(iterator.hasNext())) {
@@ -77,40 +73,37 @@ public class MyPageAction extends ActionSupport implements SessionAware{
 	 * @throws SQLException
 	 */
 	public void delete() throws SQLException {
-
 		String item_transaction_id = session.get("id").toString();
-		String user_master_id =
-		session.get("login_user_id").toString();
+		String user_master_id = session.get("login_user_id").toString();
 
 		int res = myPageDAO.buyItemHistoryDelete(item_transaction_id, user_master_id);
 
 		if(res > 0) {
 			myPageList = null;
 			setMessage("商品情報を正しく削除しました。");
-		} else if(res == 0) {
+		} else if(res == 0){
 			setMessage("商品情報の削除に失敗しました。");
 		}
 	}
-
 
 	public String getDeleteFlg() {
 		return deleteFlg;
 	}
 
-    public void setDeleteFlg(String deleteFlg) {
-    	this.deleteFlg = deleteFlg;
-    }
+	public void setDeleteFlg(String deleteFlg) {
+		this.deleteFlg = deleteFlg;
+	}
 
-    @Override
-    public void setSession(Map<String, Object> session) {
-    	this.session = session;
-    }
+	@Override
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
 
-    public String getMessage() {
-    	return message;
-    }
+	public String getMessage() {
+		return message;
+	}
 
-    public void setMessage(String message) {
-    	this.message = message;
-    }
+	public void setMessage(String message) {
+		this.message = message;
+	}
 }

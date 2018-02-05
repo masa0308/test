@@ -16,7 +16,6 @@ public class BuyItemCompleteAction extends ActionSupport implements SessionAware
 	 * @author internous
 	 */
 	public String execute() {
-
 		String result = SUCCESS;
 		return result;
 	}

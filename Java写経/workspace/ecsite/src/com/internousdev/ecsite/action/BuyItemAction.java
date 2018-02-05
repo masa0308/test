@@ -1,4 +1,3 @@
-
 package com.internousdev.ecsite.action;
 
 import java.util.Map;
@@ -22,7 +21,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 	/**
 	 * アイテム情報を格納
 	 */
-	public Map<String, Object>  session;
+	public Map<String, Object> session;
 
 	/**
 	 * 商品情報取得メソッド
