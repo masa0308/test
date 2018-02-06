@@ -24,7 +24,7 @@ public class MyPageDTO {
 		this.itemName = itemName;
 	}
 
-	public String getTotalPrice(){
+	public String getTotalPrice() {
 		return totalPrice;
 	}
 
@@ -52,7 +52,7 @@ public class MyPageDTO {
 		return userName;
 	}
 
-	public void setUesrName(String userName) {
+	public void setUserName(String userName) {
 		this.userName = userName;
 	}
 

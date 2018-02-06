@@ -10,7 +10,7 @@ public class BuyItemDTO {
 
 	public String getItemName() {
 		return itemName;
-	}
+    }
 
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
