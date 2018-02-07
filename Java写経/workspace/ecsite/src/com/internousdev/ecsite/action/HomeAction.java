@@ -8,7 +8,7 @@ import com.internousdev.ecsite.dao.BuyItemDAO;
 import com.internousdev.ecsite.dto.BuyItemDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class HomeAction extends ActionSupport implements SessionAware{
+public class HomeAction extends ActionSupport implements SessionAware {
 
 	public Map<String, Object> session;
 
@@ -20,12 +20,11 @@ public class HomeAction extends ActionSupport implements SessionAware{
 	 */
 	public String execute() {
 		String result = "login";
-		if (session.containsKey("id")){
+		if(session.containsKey("id")) {
 			// アイテム情報を取得
 			BuyItemDAO buyItemDAO = new BuyItemDAO();
 			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
 			session.put("id", buyItemDTO.getId());
-			session.put("buyItem_name", buyItemDTO.getItemName());
 			session.put("buyItem_price", buyItemDTO.getItemPrice());
 
 			result = SUCCESS;
@@ -38,7 +37,11 @@ public class HomeAction extends ActionSupport implements SessionAware{
 		this.session = session;
 	}
 
-	public Map<String, Object> getSession() {
+	public void setsession(Map<String, Object> session) {
+		this.session = session;
+	}
+
+	public Map<String, Object> getsession() {
 		return this.session;
 	}
 }
