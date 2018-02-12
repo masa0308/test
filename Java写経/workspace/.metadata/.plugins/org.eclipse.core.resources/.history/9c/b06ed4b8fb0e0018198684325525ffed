@@ -1,0 +1,35 @@
+package com.internousdev.ecsite.util;
+
+import java.sql.Connection;
+
+public class DBConnector {
+
+	/**
+	 * JDBCドライバー名
+	 */
+	private static String driverName="com.mysql.jdbc.Driver";
+
+	/**
+	 * データベース接続URL
+	 */
+	private static String url = "jdbc:mysql://localhost/testdb";
+
+	/**
+	 * データベース接続ユーザ名
+	 */
+	private static String user = "root";
+
+	/**
+	 * データベース接続パスワード
+	 */
+	private static String password = "";
+
+	public Connection getConnection(){
+		Connection con = null;
+		try{
+		Class.forName(driverName);
+		con =
+		}
+	}
+
+}

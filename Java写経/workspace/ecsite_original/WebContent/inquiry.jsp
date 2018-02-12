@@ -8,17 +8,19 @@
 <title>Insert title here</title>
 </head>
 <body>
-<s:form method="post" action="InquiryCompleteAction">
-ユーザー名：<input type="text" name="username" /><br>
-お問い合わせの種類<br>
+<s:form action="InquiryCompleteAction" method="post">
+ユーザー名:<input type="text" name="username"/>
+<br><br>
 <select name="qtype">
 <option value="company">会社について</option>
 <option value="product">製品について</option>
-<option value="support">サポート</option>
-</select>
+<option value="support">アフターサポートについて</option>
+ </select>
 <br>
-お問い合わせ内容：<s:textarea name="body" />
-<s:submit value="送信"/>
-</s:form>
+<br>
+お問い合わせ内容:
+ <s:textarea name="body" />
+ <s:submit value="送信" />
+ </s:form>
 </body>
 </html>

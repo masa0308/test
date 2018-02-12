@@ -8,7 +8,7 @@
 <title>Insert title here</title>
 </head>
 <body>
-<s:property value="username" />さん、こんにちは！
-パスワードは<s:property value="password" />
+<s:property value="loginUserId" />さん、ようこそ！
+パスワードは<s:property value="loginPassword" />
 </body>
 </html>

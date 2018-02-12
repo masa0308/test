@@ -8,8 +8,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-<s:property value="username" />さん、お問い合わせありがとうございました。
-お問い合わせの種類
+<s:property value="username" />さん、お問い合わせ有難うございます！
+<br>
+<br>
+お問い合わせの種類:
 <s:if test='qtype=="company"'>
 会社について
 </s:if>
@@ -20,7 +22,8 @@
 アフターサポートについて
 </s:if>
 <br>
-お問いあわせ内容：
+<br>
+お問い合わせ内容
 <s:property value="body" />
 </body>
 </html>
