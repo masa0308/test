@@ -333,3 +333,12 @@
 0:0:0:0:0:0:0:1 - - [13/Feb/2018:08:49:43 +0900] "GET /ecsite_original/UserCreateAction.action HTTP/1.1" 200 1182
 0:0:0:0:0:0:0:1 - - [13/Feb/2018:08:49:47 +0900] "POST /ecsite_original/UserCreateConfirmAction.action HTTP/1.1" 200 1013
 0:0:0:0:0:0:0:1 - - [13/Feb/2018:08:49:48 +0900] "POST /ecsite_original/UserCreateCompleteAction.action HTTP/1.1" 200 376
+127.0.0.1 - - [13/Feb/2018:20:27:38 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [13/Feb/2018:20:27:39 +0900] "GET /ecsite_original/ HTTP/1.1" 404 1051
+127.0.0.1 - - [13/Feb/2018:20:29:03 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [13/Feb/2018:20:29:04 +0900] "GET /ecsite_original/ HTTP/1.1" 200 566
+0:0:0:0:0:0:0:1 - - [13/Feb/2018:20:29:06 +0900] "GET /ecsite_original/WelcomeAction HTTP/1.1" 200 1350
+0:0:0:0:0:0:0:1 - - [13/Feb/2018:20:29:07 +0900] "GET /ecsite_original/UserCreateAction.action HTTP/1.1" 200 1182
+0:0:0:0:0:0:0:1 - - [13/Feb/2018:20:29:14 +0900] "POST /ecsite_original/UserCreateConfirmAction.action HTTP/1.1" 200 1013
+0:0:0:0:0:0:0:1 - - [13/Feb/2018:20:29:15 +0900] "POST /ecsite_original/UserCreateCompleteAction.action HTTP/1.1" 200 376
+0:0:0:0:0:0:0:1 - - [13/Feb/2018:20:29:55 +0900] "GET /ecsite_original/HomeAction.action HTTP/1.1" 200 566
