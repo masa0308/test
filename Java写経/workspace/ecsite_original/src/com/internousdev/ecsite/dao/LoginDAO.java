@@ -3,43 +3,47 @@ package com.internousdev.ecsite.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.SQLException;
 
 import com.internousdev.ecsite.dto.LoginDTO;
 import com.internousdev.ecsite.util.DBConnector;
 
-public class LoginDAO{
+public class LoginDAO {
 
-	public String loginUserId;
+	private DBConnector dbConnector = new DBConnector();
 
-	public String loginPassword;
+	private Connection connection = dbConnector.getConnection();
 
-	public LoginDTO select(String loginUserId, String loginPassword){
-		DBConnector db = new DBConnector();
-		Connection con = db.getConnection();
-		LoginDTO dto = new LoginDTO();
+	private LoginDTO loginDTO = new LoginDTO();
 
-		String sql = "SELECT * FROM login_user_transaction where login_id =? AND login_pass = ?";
+	public LoginDTO getLoginUserInfo(String loginUserId, String loginPassword){
+
+		String sql = "SELECT * FROM login_user_transaction where login_id = ? AND login_pass = ?";
+
 		try{
-			PreparedStatement ps = con.prepareStatement(sql);
-			ps.setString(1, loginUserId);
-			ps.setString(2, loginPassword);
-			ResultSet rs = ps.executeQuery();
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, loginUserId);
+			preparedStatement.setString(2, loginPassword);
 
-			if(rs.next()){
-				dto.setLoginUserId(rs.getString("login_id"));
-				dto.setLoginPassword(rs.getString("login_pass"));
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			if(resultSet.next()) {
+				loginDTO.setLoginId(resultSet.getString("login_id"));
+				loginDTO.setLoginPassword(resultSet.getString("login_pass"));
+				loginDTO.setUserName(resultSet.getString("user_name"));
+
+				if(!(resultSet.getString("login_id").equals(null)))
+				{
+					loginDTO.setLoginFlg(true);
+				}
 			}
-			else{
-				dto.setLoginUserId("該当なし");
-				dto.setLoginPassword("該当なし");
-			}
-		}catch(SQLException e){
+		} catch(Exception e) {
 			e.printStackTrace();
-		}try{
-			con.close();
-		}catch(SQLException e){
-			e.printStackTrace();
-		} return dto;
+		}
+
+		return loginDTO;
+	}
+
+	public LoginDTO getLoginDTO(){
+		return loginDTO;
 	}
 }

@@ -8,8 +8,8 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="WelcomeAction">
-<s:submit value="ログイン"/>
+<form action="HomeAction">
+<s:submit value="商品購入"/>
 </form>
 <form action="InquiryAction">
 <s:submit value="お問い合わせ"/>

@@ -7,7 +7,6 @@ import org.apache.struts2.interceptor.SessionAware;
 import com.opensymphony.xwork2.ActionSupport;
 
 public class UserCreateConfirmAction extends ActionSupport implements SessionAware{
-
 	private String loginUserId;
 
 	private String loginPassword;
@@ -28,10 +27,12 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 			session.put("loginUserId", loginUserId);
 			session.put("loginPassword", loginPassword);
 			session.put("userName", userName);
-		}else{
-			setErrorMessage("未入力の項目があります");
+		} else{
+			setErrorMessage("未入力の項目があります。");
 			result = ERROR;
-		}return result;
+		}
+
+		return result;
 	}
 
 
@@ -60,8 +61,7 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	}
 
 	@Override
-
-	public void setSession(Map<String,Object> session){
+	public void setSession(Map<String, Object> session){
 		this.session = session;
 	}
 
@@ -72,4 +72,5 @@ public class UserCreateConfirmAction extends ActionSupport implements SessionAwa
 	public void setErrorMessage(String errorMessage){
 		this.errorMessage = errorMessage;
 	}
+
 }

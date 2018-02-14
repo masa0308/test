@@ -124,7 +124,7 @@
              Note: The pattern used is equivalent to using pattern="common" -->
         <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs" pattern="%h %l %u %t &quot;%r&quot; %s %b" prefix="localhost_access_log" suffix=".txt"/>
 
-      <Context docBase="C:\Users\Masafumi\Desktop\workspace\workspace-ikegami\test\Java写経\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\Masafumi\Desktop\workspace\workspace-ikegami\test\Java写経\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ecsite_original" path="/ecsite_original" reloadable="true" source="org.eclipse.jst.jee.server:ecsite_original"/><Context docBase="C:\Users\Masafumi\Desktop\workspace\workspace-ikegami\test\Java写経\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ecsite" path="/ecsite" reloadable="true" source="org.eclipse.jst.jee.server:ecsite"/><Context docBase="C:\Users\Masafumi\Desktop\workspace\workspace-ikegami\test\Java写経\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\WebProj" path="/WebProj" reloadable="true" source="org.eclipse.jst.jee.server:WebProj"/></Host>
+      <Context docBase="C:\Users\testuser\Desktop\workspace\workspace-ikegami\test\Java写経\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ROOT" path="" reloadable="false"/><Context docBase="C:\Users\testuser\Desktop\workspace\workspace-ikegami\test\Java写経\workspace\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\ecsite_original" path="/ecsite_original" reloadable="true" source="org.eclipse.jst.jee.server:ecsite_original"/></Host>
     </Engine>
   </Service>
 </Server>

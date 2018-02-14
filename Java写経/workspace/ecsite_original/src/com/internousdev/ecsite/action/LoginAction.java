@@ -1,29 +1,50 @@
 package com.internousdev.ecsite.action;
 
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
 import com.internousdev.ecsite.dao.LoginDAO;
 import com.internousdev.ecsite.dto.LoginDTO;
 import com.opensymphony.xwork2.ActionSupport;
 
-public class LoginAction extends ActionSupport{
+public class LoginAction extends ActionSupport implements SessionAware{
+
 	private String loginUserId;
 
 	private String loginPassword;
 
+	private String result;
+
+	public Map<String, Object>session;
+
+	private LoginDAO loginDAO = new LoginDAO();
+
+	private LoginDTO loginDTO = new LoginDTO();
+
+	private BuyItemDAO buyItemDAO = new BuyItemDAO();
+
 	public String execute(){
-		String ret = ERROR;
-		System.out.println(loginUserId);
-		System.out.println(loginPassword);
-		LoginDAO dao = new LoginDAO();
-		LoginDTO dto = new LoginDTO();
 
-		dto = dao.select(loginUserId,loginPassword);
+		result = ERROR;
 
-		if(this.loginUserId.equals(dto.getLoginUserId()) && this.loginPassword.equals(dto.getLoginPassword())){
-			ret=SUCCESS;
-		}else {
-			ret=ERROR;
+		loginDTO = loginDAO.getLoginUserInfo(loginUserId, loginPassword);
+
+		session.put("loginUser", loginDTO);
+
+		if(((LoginDTO)session.get("loginUser")).getLoginFlg()){
+			result = SUCCESS;
+
+			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
+			session.put("login_user_id", loginDTO.getLoginId());
+			session.put("id", buyItemDTO.getId());
+			session.put("buyItem_name", buyItemDTO.getItemName());
+			session.put("buyItem_price", buyItemDTO.getItemPrice());
+
+			return result;
 		}
-		return ret;
+
+		return result;
 	}
 
 	public String getLoginUserId(){
@@ -39,6 +60,12 @@ public class LoginAction extends ActionSupport{
 	}
 
 	public void setLoginPassword(String loginPassword){
-		this.loginPassword=loginPassword;
+		this.loginPassword = loginPassword;
 	}
+
+	@Override
+	public void setSession(Map<String, Object> session){
+		this.session = session;
 	}
+
+}

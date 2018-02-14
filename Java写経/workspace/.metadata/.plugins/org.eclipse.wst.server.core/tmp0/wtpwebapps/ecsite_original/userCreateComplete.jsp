@@ -9,6 +9,6 @@
 </head>
 <body>
 ユーザーの登録が完了致しました。
-<a href='<s:url action="HomeAction" />'>ログインへ</a>
+<a href='<s:url action="GoHomeAction" />'>ログインへ</a>
 </body>
 </html>
