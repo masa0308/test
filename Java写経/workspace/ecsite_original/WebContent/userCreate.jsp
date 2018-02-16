@@ -24,7 +24,7 @@
 ログインPASS:<input type="text" name="loginPassword" value=""/>
 <br>
 ユーザー名:<input type="text" name="userName" value=""/>
-<s:submit value="作成"/>
+<s:submit value="登録"/>
 </s:form>
 <br>
 前画面に戻る場合は<a href='<s:url action="HomeAction" />'>こちら</a>

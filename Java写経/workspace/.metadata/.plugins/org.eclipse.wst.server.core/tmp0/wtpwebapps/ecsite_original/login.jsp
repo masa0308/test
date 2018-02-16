@@ -18,8 +18,9 @@
 <s:form action="LoginAction">
 <s:textfield name="loginUserId" value="" label="ログインID" /><br>
 <s:password name="loginPassword" value="" label="パスワード" />
-<s:submit value="送信"/>
+<s:submit value="ログイン"/>
 <div>新規ユーザー登録は<a href='<s:url action="UserCreateAction" />'>こちら</a></div>
+<div>Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a></div>
 </s:form>
 </body>
 </html>

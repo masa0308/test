@@ -8,12 +8,15 @@
 <title>Insert title here</title>
 </head>
 <body>
-<form action="HomeAction">
+<s:form action="HomeAction">
 <s:submit value="商品購入"/>
-</form>
-<form action="InquiryAction">
+</s:form>
+<s:form action="InquiryAction">
 <s:submit value="お問い合わせ"/>
-</form>
+</s:form>
+<s:if test="#session.id != null">
+<p>ログアウトする場合は<a href='<s:url action="LogoutAction" />'>こちら</a></p>
+</s:if>
 
 </body>
 </html>
