@@ -10,3 +10,7 @@
 0:0:0:0:0:0:0:1 - - [21/Feb/2018:18:38:04 +0900] "POST /ecsite_original/BuyItemAction.action HTTP/1.1" 200 1565
 0:0:0:0:0:0:0:1 - - [21/Feb/2018:18:38:04 +0900] "POST /ecsite_original/BuyItemConfirmAction HTTP/1.1" 200 736
 0:0:0:0:0:0:0:1 - - [21/Feb/2018:18:38:06 +0900] "GET /ecsite_original/MyPageAction.action HTTP/1.1" 200 1763
+127.0.0.1 - - [21/Feb/2018:21:08:53 +0900] "GET / HTTP/1.1" 404 1019
+0:0:0:0:0:0:0:1 - - [21/Feb/2018:21:08:55 +0900] "GET /ecsite_original/ HTTP/1.1" 200 1028
+0:0:0:0:0:0:0:1 - - [21/Feb/2018:21:08:58 +0900] "POST /ecsite_original/HomeAction.action;jsessionid=25FCE8953F45DE1E4100FF2DD9509D2F HTTP/1.1" 200 1451
+0:0:0:0:0:0:0:1 - - [21/Feb/2018:21:09:08 +0900] "POST /ecsite_original/HomeAction.action;jsessionid=25FCE8953F45DE1E4100FF2DD9509D2F HTTP/1.1" 200 1451

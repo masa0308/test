@@ -1,6 +1,5 @@
 package com.internousdev.ecsite.action;
 
-
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -15,7 +14,7 @@ public class GoHomeAction extends ActionSupport implements SessionAware {
 		return SUCCESS;
 	}
 
-	public Map<String, Object> getSession(){
+	public Map<String, Object> getSession() {
 		return this.session;
 	}
 
@@ -23,5 +22,4 @@ public class GoHomeAction extends ActionSupport implements SessionAware {
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
-
 }

@@ -15,7 +15,7 @@ public class LoginDAO {
 
 	private LoginDTO loginDTO = new LoginDTO();
 
-	public LoginDTO getLoginUserInfo(String loginUserId, String loginPassword){
+	public LoginDTO getLoginUserInfo(String loginUserId, String loginPassword) {
 
 		String sql = "SELECT * FROM login_user_transaction where login_id = ? AND login_pass = ?";
 
@@ -31,8 +31,7 @@ public class LoginDAO {
 				loginDTO.setLoginPassword(resultSet.getString("login_pass"));
 				loginDTO.setUserName(resultSet.getString("user_name"));
 
-				if(!(resultSet.getString("login_id").equals(null)))
-				{
+				if(!(resultSet.getString("login_id").equals(null))) {
 					loginDTO.setLoginFlg(true);
 				}
 			}
@@ -43,7 +42,7 @@ public class LoginDAO {
 		return loginDTO;
 	}
 
-	public LoginDTO getLoginDTO(){
+	public LoginDTO getLoginDTO() {
 		return loginDTO;
 	}
 }
