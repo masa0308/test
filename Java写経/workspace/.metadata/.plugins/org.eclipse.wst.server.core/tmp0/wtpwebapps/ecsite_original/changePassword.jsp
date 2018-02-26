@@ -20,6 +20,10 @@
  <s:property value="errorMessage" escape="false" />
 </s:if>
 
+<s:if test="wrongMessage != ''">
+ <s:property value="wrongMessage" escape="false" />
+</s:if>
+
 <p>現在のユーザーID、パスワードを入力してください</p>
 <s:form action="ChangePasswordConfirmAction">
 <s:textfield name="loginUserId" value="" label="ログインID"/><br>

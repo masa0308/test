@@ -1,0 +1,62 @@
+package com.internousdev.ecsite.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
+import java.sql.SQLException;
+
+import com.internousdev.ecsite.util.DBConnector;
+import com.internousdev.ecsite.util.DateUtil;
+
+public class ChangePasswordCompleteDAO {
+
+	private DBConnector dbConnector = new DBConnector();
+
+	private Connection connection = dbConnector.getConnection();
+
+	private DateUtil dateUtil = new DateUtil();
+
+	private String sql1 = "SELECT * FROM login_user_transacion where login_id = ? AND login_pass = ?";
+
+	public void getUserInfo(String loginUserId, String loginPassword) {
+		try{
+			PreparedStatement preparedStatement1 = connection.prepareStatement(sql1);
+			preparedStatement1.setString(1, loginUserId);
+			preparedStatement1.setString(2, loginPassword);
+
+			ResultSet resultSet = preparedStatement1.executeQuery();
+
+			if(resultSet.next()){
+
+				SetBoo(true);
+			}
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+	}
+
+	private String sql2 = "UPDATE login_user_transaction  SET login_pass = ?, updated_date = ? where login_id= ? AND login_pass = ?";
+
+	public void changeUser(String loginUserId, String loginPassword, String changePassword) throws SQLException{
+
+		try {
+			PreparedStatement preparedStatement2 = connection.prepareStatement(sql2);
+			preparedStatement2.setString(1, changePassword);
+			preparedStatement2.setString(2, dateUtil.getDate());
+			preparedStatement2.setString(3, loginUserId);
+			preparedStatement2.setString(4, loginPassword);
+
+			preparedStatement2.execute();
+
+		}catch(SQLException e){
+			e.printStackTrace();
+
+		}finally {
+			connection.close();
+		}
+
+
+	}
+
+
+}

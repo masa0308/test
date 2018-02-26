@@ -20,13 +20,31 @@ public class ChangePasswordCompleteAction extends ActionSupport implements Sessi
 
 	private String result;
 
+	private String wrongMessage;
+
 	private ChangePasswordCompleteDAO changePasswordCompleteDAO = new ChangePasswordCompleteDAO();
 
 	public String execute() throws SQLException {
 
+		result = ERROR;
+
+
+
+		boolean boo = changePasswordCompleteDAO.getUserInfo(session.get("loginUserId").toString(), session.get("loginPassword").toString());
+
+		if(boo==true){
+
+
 		changePasswordCompleteDAO.changeUser(session.get("loginUserId").toString(), session.get("loginPassword").toString(), session.get("changePassword").toString());
 
+
 		result = SUCCESS;
+
+
+
+		} else {
+			setWrongMessage("IDまたはパスワードが間違っています。");
+		}
 
 		return result;
 	}
@@ -55,9 +73,19 @@ public class ChangePasswordCompleteAction extends ActionSupport implements Sessi
 		this.changePassword= changePassword;
 	}
 
+
+	public String getWrongMessage() {
+		return wrongMessage;
+	}
+
+	public void setWrongMessage(String wrongMessage) {
+		this.wrongMessage = wrongMessage;
+	}
+
 	@Override
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
 	}
+
 
 }

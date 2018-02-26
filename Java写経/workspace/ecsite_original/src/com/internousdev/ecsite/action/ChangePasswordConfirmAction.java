@@ -28,9 +28,11 @@ public class ChangePasswordConfirmAction extends ActionSupport implements Sessio
 			session.put("loginUserId", loginUserId);
 			session.put("loginPassword", loginPassword);
 			session.put("changePassword", changePassword);
-		} else {
+		}
 
-			setErrorMessage("未入力項目があります。");
+		else{
+
+			setErrorMessage("未入力の項目があります。");
 			result = ERROR;
 		}
 
@@ -66,12 +68,14 @@ public class ChangePasswordConfirmAction extends ActionSupport implements Sessio
 		this.session = session;
 	}
 
-	public String getErrorMessage(){
+	public String getErrorMessage() {
 		return errorMessage;
 	}
 
-	public void setErrorMessage(String errorMessage){
+	public void setErrorMessage(String errorMessage) {
 		this.errorMessage = errorMessage;
 	}
+
+
 
 }

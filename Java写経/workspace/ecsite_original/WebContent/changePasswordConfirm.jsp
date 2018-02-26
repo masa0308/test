@@ -16,6 +16,7 @@
 </head>
 <body>
 <h3>登録する内容は以下でよろしいでしょうか？</h3>
+
 <s:form action="ChangePasswordCompleteAction">
 ログインID:<s:property value="loginUserId" escape="false" /><br>
 ログインPASS:<s:property value="loginPassword" escape="false" /><br>
