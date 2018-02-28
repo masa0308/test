@@ -1,3 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<session version="1.0">&#x0A;<refactoring comment="&apos;error.jsp&apos; を &apos;WebContent&apos; に移動" description="&apos;error.jsp&apos; を &apos;WebContent&apos; に移動" destination="WebContent" element1="WebContent/WEB-INF/error.jsp" flags="7" id="org.eclipse.ltk.core.refactoring.move.resources" resources="1" stamp="1515587157482" updateReferences="true"/>&#x0A;<refactoring accessors="true" comment="Delete element from プロジェクト &apos;template&apos;&#x0D;&#x0A;- 元のプロジェクト: &apos;template&apos;&#x0D;&#x0A;- オリジナル要素: &apos;error.jsp&apos;" description="要素を削除" element1="WebContent/error.jsp" elements="0" flags="589830" id="org.eclipse.jdt.ui.delete" resources="1" stamp="1515587171833" subPackages="false" version="1.0"/>
-</session>

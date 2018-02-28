@@ -1,0 +1,63 @@
+package com.internousdev.ecsite.action;
+
+import com.internousdev.ecsite.dao.ItemAddCompleteDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ItemAddCompleteAction extends ActionSupport{
+
+	private String itemname;
+
+	private int itempriceInt;
+
+	private int itemstockInt;
+
+	private String result;
+
+	private ItemAddCompleteDAO itemAddCompleteDAO = new ItemAddCompleteDAO();
+
+	/**
+	 * 商品情報登録
+	 */
+	public String execute() throws SQLException {
+
+		itemAddCompleteDAO.registerItem(itemname, itempriceInt, itemstockInt){
+
+			result = SUCCESS;
+
+			return result;
+		}
+	}
+
+	public String getItemname() {
+		return itemname;
+	}
+
+	public void setItemname(String itemname) {
+		this.itemname = itemname;
+	}
+
+	public int getItempriceInt() {
+		return itempriceInt;
+	}
+
+	public void setItempriceInt(int itempriceInt) {
+		this.itempriceInt = itempriceInt;
+	}
+
+	public int getItemstockInt() {
+		return itemstockInt;
+	}
+
+	public void setItemstockInt(int itemstockInt) {
+		this.itemstockInt = itemstockInt;
+	}
+
+	public String getResult() {
+		return result;
+	}
+
+	public void setResult(String result) {
+		this.result = result;
+	}
+
+}

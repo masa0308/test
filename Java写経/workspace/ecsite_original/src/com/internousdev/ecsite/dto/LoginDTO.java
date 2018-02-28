@@ -8,6 +8,8 @@ public class LoginDTO{
 
 	private String userName;
 
+	private int status;
+
 	private boolean loginFlg = false;
 
 	public String getLoginId(){
@@ -40,6 +42,14 @@ public class LoginDTO{
 
 	public void setLoginFlg(boolean loginFlg) {
 		this.loginFlg = loginFlg;
+	}
+
+	public int getStatus() {
+		return status;
+	}
+
+	public void setStatus(int status) {
+		this.status = status;
 	}
 
 }

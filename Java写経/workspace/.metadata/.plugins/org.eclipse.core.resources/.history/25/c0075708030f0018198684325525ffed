@@ -1,5 +1,0 @@
-package com.internousdev.ecsite.dto.copy;
-
-public class LoginDTO {
-
-}

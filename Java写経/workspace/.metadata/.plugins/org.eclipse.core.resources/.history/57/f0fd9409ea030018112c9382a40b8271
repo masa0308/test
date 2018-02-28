@@ -1,9 +1,0 @@
-table {
-	width: auto;
-	border-spacing: 0;
-	font-size: 14px;
-}
-
-table th {
-
-}

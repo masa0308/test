@@ -12,6 +12,9 @@
 <meta name="keywords" content="" />
 <title>パスワード変更画面</title>
 <style type="text/css">
+.red{
+ color: red;
+ }
 </style>
 </head>
 <body>
@@ -20,15 +23,14 @@
  <s:property value="errorMessage" escape="false" />
 </s:if>
 
-<s:if test="wrongMessage != ''">
+<p class="red"><s:if test="wrongMessage != ''">
  <s:property value="wrongMessage" escape="false" />
-</s:if>
+</s:if></p>
 
-<p>現在のユーザーID、パスワードを入力してください</p>
+<p>現在のユーザーID、パスワード、変更後のパスワードを入力してください</p>
 <s:form action="ChangePasswordConfirmAction">
 <s:textfield name="loginUserId" value="" label="ログインID"/><br>
 <s:textfield name="loginPassword" value="" label="パスワード"/><br>
-<p>変更後のパスワードを入力してください</p>
 <s:textfield name="changePassword" value="" label="変更後のパスワード"/><br>
 <s:submit value="登録" />
 </s:form>

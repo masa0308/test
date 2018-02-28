@@ -1,0 +1,58 @@
+package com.internousdev.ecsite.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ItemAddConfirmAction extends ActionSupport implements SessionAware{
+
+	private String itemname;
+
+	private String itemprice;
+
+	private String itemstock;
+
+	public Map<String, Object> session;
+
+	private String result;
+
+	private String errorMessage;
+
+	public String execute(){
+
+		result = SUCCESS;
+
+		// 入力に空白がないかチェック
+		if(itemname.equals("") && (itemprice.equals("")) && (itemname.equals(""))){
+			setErrorMessage("未入力の項目があります。");
+
+			result = ERROR;
+
+			return result;
+
+		}
+
+		// 数字は0より大きいかチェック
+		int itempriceInt = Integer.parseInt(itemprice);
+		int itemstockInt = Integer.parseInt(itemstock);
+
+		if (itempriceInt <= 0 || itemstockInt <= 0) {
+			setErrorMessage("1以上の数字を入れてください");
+
+			result = ERROR;
+
+			return result;
+		}else{
+
+		return result;
+
+		}
+
+
+
+
+
+
+}

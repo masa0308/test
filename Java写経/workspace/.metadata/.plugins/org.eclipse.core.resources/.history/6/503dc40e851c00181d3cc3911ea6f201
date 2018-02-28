@@ -1,0 +1,18 @@
+package com.internousdev.ecsite.dao;
+
+import java.sql.Connection;
+
+import com.internousdev.ecsite.util.DBConnector;
+
+public class ItemAddCompleteDAO {
+
+	private DBConnector dbConnector = new DBConnector();
+
+	private Connection connection = dbConnector.getConnection();
+
+	private DateUtil dateutil = new Dateutil();
+
+	private String sql = "INSERT INTO "
+
+
+}
