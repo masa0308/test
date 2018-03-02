@@ -18,11 +18,18 @@
 管理者画面<br>
 追加する内容は以下のものでよろしいですか？<br>
 <s:form action="ItemAddCompleteAction">
-<s:property value="itemname" escape="false" />
-<s:property value="itempriceInt" escape="false" />
-<s:property value="itemstockInt" escape="false" />
+商品名:<s:property value="itemname" escape="false"/>
+<s:hidden name="itemname" value="%{itemname}"/>
+<br>
+値段:<s:property value="itemprice" escape="false" />
+<s:hidden name="itemprice" value="%{itemprice}"/>
+<br>
+品数:<s:property value="itemstock" escape="false" />
+<s:hidden name="itemstock" value="%{itemstock}"/>
 <s:submit value="完了"/>
 </s:form>
 戻る場合は<a href='<s:url action="ItemAddAction" />'>こちら</a>
 </body>
 </html>
+
+<!--<s:hidden name="itemname" value="%{itemname}"/>  -->

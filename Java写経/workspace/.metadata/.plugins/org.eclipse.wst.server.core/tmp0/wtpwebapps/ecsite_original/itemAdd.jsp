@@ -19,7 +19,7 @@
 <br>
 <s:if test="errorMessage != ''">
   <s:property value="errorMessage" escape="false" />
-</s:if>
+</s:if><br>
 追加したい商品名、値段、品数を入力してください。
 <br>
 <s:form action="ItemAddConfirmAction"><br>

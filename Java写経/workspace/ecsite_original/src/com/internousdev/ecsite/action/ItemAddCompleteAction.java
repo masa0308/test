@@ -9,9 +9,9 @@ public class ItemAddCompleteAction extends ActionSupport{
 
 	private String itemname;
 
-	private int itempriceInt;
+	private String itemprice;
 
-	private int itemstockInt;
+	private String itemstock;
 
 	private String result;
 
@@ -22,9 +22,10 @@ public class ItemAddCompleteAction extends ActionSupport{
 	 */
 	public String execute() throws SQLException {
 
-		itemAddCompleteDAO.registerItem(itemname, itempriceInt, itemstockInt);
+		itemAddCompleteDAO.registerItem(itemname, itemprice, itemstock);
 
 			result = SUCCESS;
+			System.out.println(itemname);
 
 			return result;
 
@@ -38,21 +39,6 @@ public class ItemAddCompleteAction extends ActionSupport{
 		this.itemname = itemname;
 	}
 
-	public int getItempriceInt() {
-		return itempriceInt;
-	}
-
-	public void setItempriceInt(int itempriceInt) {
-		this.itempriceInt = itempriceInt;
-	}
-
-	public int getItemstockInt() {
-		return itemstockInt;
-	}
-
-	public void setItemstockInt(int itemstockInt) {
-		this.itemstockInt = itemstockInt;
-	}
 
 	public String getResult() {
 		return result;
@@ -60,6 +46,22 @@ public class ItemAddCompleteAction extends ActionSupport{
 
 	public void setResult(String result) {
 		this.result = result;
+	}
+
+	public String getItemprice() {
+		return itemprice;
+	}
+
+	public void setItemprice(String itemprice) {
+		this.itemprice = itemprice;
+	}
+
+	public String getItemstock() {
+		return itemstock;
+	}
+
+	public void setItemstock(String itemstock) {
+		this.itemstock = itemstock;
 	}
 
 }
