@@ -37,6 +37,10 @@ public class ItemAddConfirmAction extends ActionSupport implements SessionAware{
 			return result;
 
 		}
+
+		// 値段・品数に文字が入っていないかチェック
+
+
 		// 数字は0より大きいかチェック
 		int itempriceInt = Integer.parseInt(itemprice);
 		int itemstockInt = Integer.parseInt(itemstock);

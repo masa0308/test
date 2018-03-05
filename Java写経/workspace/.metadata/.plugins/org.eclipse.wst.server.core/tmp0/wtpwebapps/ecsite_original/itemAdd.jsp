@@ -12,20 +12,23 @@
 <meta name="keywords" content="" />
 <title>商品追加画面</title>
 <style type="text/css">
+.red{
+ color: red;
+}
 </style>
 </head>
 <body>
 管理者画面
 <br>
 <s:if test="errorMessage != ''">
-  <s:property value="errorMessage" escape="false" />
+ <p class="red"><s:property value="errorMessage" escape="false" /></p>
 </s:if><br>
 追加したい商品名、値段、品数を入力してください。
 <br>
 <s:form action="ItemAddConfirmAction"><br>
-<s:textfield name="itemname" label="商品名"/><br>
-<s:textfield name="itemprice" label="値段" /><br>
-<s:textfield name="itemstock" label="品数" /><br>
+<s:textfield name="itemname" value="" label="商品名"/><br>
+<s:textfield name="itemprice" value="" label="値段" /><br>
+<s:textfield name="itemstock" value="" label="品数"/><br>
 <s:submit value="商品登録"/>
 </s:form>
 

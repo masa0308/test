@@ -15,6 +15,10 @@ public class ItemAddCompleteAction extends ActionSupport{
 
 	private String result;
 
+	private String errorMessage;
+
+	private int res;
+
 	private ItemAddCompleteDAO itemAddCompleteDAO = new ItemAddCompleteDAO();
 
 	/**
@@ -22,12 +26,22 @@ public class ItemAddCompleteAction extends ActionSupport{
 	 */
 	public String execute() throws SQLException {
 
-		itemAddCompleteDAO.registerItem(itemname, itemprice, itemstock);
+		res = itemAddCompleteDAO.registerItem(itemname, itemprice, itemstock);
+
+		if(res>0){
 
 			result = SUCCESS;
-			System.out.println(itemname);
 
-			return result;
+
+		}else if(res <= 0){
+
+			setErrorMessage("更新できませんでした");
+			result = ERROR;
+
+
+		}
+
+		return result;
 
 	}
 
@@ -62,6 +76,22 @@ public class ItemAddCompleteAction extends ActionSupport{
 
 	public void setItemstock(String itemstock) {
 		this.itemstock = itemstock;
+	}
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
+	}
+
+	public int getRes() {
+		return res;
+	}
+
+	public void setRes(int res) {
+		this.res = res;
 	}
 
 }

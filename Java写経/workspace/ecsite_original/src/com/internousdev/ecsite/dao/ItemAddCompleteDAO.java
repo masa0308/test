@@ -25,7 +25,6 @@ public class ItemAddCompleteDAO {
 			int itempriceInt = Integer.parseInt(itemprice);
 			int itemstockInt = Integer.parseInt(itemstock);
 
-			System.out.println(itemstockInt);
 			PreparedStatement preparedStatement = connection.prepareStatement(sql);
 			preparedStatement.setString(1, itemname);
 			preparedStatement.setInt(2, itempriceInt);

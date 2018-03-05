@@ -1,0 +1,18 @@
+package com.internousdev.ecsite.dto;
+
+public class ItemListDTO {
+
+	private String id;
+
+	private String itemName;
+
+	private String itemPrice;
+
+	private String itemStock;
+
+	private String insertDate;
+
+	private String updateDate;
+
+
+}

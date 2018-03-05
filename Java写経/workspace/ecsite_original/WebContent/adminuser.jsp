@@ -17,6 +17,8 @@
 <body>
 管理者画面<br>
 商品追加は<a href ='<s:url action="ItemAddAction" />'>こちら</a><br>
+商品一覧参照は<a href='<s:url action="ItemListAction" />'>こちら</a>
+商品削除は<a href='<s:url action="ItemDeleteAction" />'>こちら</a>
 ログアウトは<a href ='<s:url action="LogoutAction" />'>こちら</a>
 
 
