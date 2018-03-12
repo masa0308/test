@@ -52,5 +52,15 @@ td{
 </s:iterator>
 </table>
 管理者画面は<a href ='<s:url action="AdminAction" />'>こちら</a>
+
+<h3>商品削除</h3>
+<s:if test="errorMessage != ''">
+<s:property value="errorMessage" escape="false" />
+</s:if>
+<s:form action="ItemDeleteAction">
+<s:textfield name="itemId" value="" label="商品ID"/><br>
+<s:textfield name="itemName" value="" label="商品名"/><br>
+<s:submit value="商品削除"/>
+</s:form>
 </body>
 </html>

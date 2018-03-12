@@ -119,6 +119,7 @@
 		<!--  ItemDeleteAction -->
 		<action name="ItemDeleteAction" class="com.internousdev.ecsite.action.ItemDeleteAction" method="execute">
 		    <result name="success">itemDelete.jsp</result>
+		    <result name="error">itemList.jsp</result>
 		</action>
 
 	</package>

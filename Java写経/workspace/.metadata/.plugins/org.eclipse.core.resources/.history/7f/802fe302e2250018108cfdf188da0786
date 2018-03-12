@@ -1,0 +1,39 @@
+package com.internousdev.ecsite.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+public class ItemDeleteAction extends ActionSupport{
+
+	private String itemid;
+
+	private String itemname;
+
+	private String result;
+
+	private String errorMessage;
+
+	public String execute(){
+
+		if(!(itemid.equals("")) && !(itemname.equals(""))){
+			resu
+		}
+
+	}
+
+	public String getItemid() {
+		return itemid;
+	}
+
+	public void setItemid(String itemid) {
+		this.itemid = itemid;
+	}
+
+	public String getItemname() {
+		return itemname;
+	}
+
+	public void setItemname(String itemname) {
+		this.itemname = itemname;
+	}
+
+}

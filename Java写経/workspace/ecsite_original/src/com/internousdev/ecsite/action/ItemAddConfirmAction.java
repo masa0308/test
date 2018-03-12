@@ -1,6 +1,8 @@
 package com.internousdev.ecsite.action;
 
 import java.util.Map;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
 
 import org.apache.struts2.interceptor.SessionAware;
 
@@ -26,7 +28,7 @@ public class ItemAddConfirmAction extends ActionSupport implements SessionAware{
 
 	public String execute(){
 
-		result = SUCCESS;
+
 
 		// 入力に空白がないかチェック
 		if(itemname.equals("") || (itemprice.equals("")) || (itemstock.equals(""))){
@@ -39,6 +41,20 @@ public class ItemAddConfirmAction extends ActionSupport implements SessionAware{
 		}
 
 		// 値段・品数に文字が入っていないかチェック
+		Pattern p = Pattern.compile("^[0-9]*$");
+		Matcher itempricem = p.matcher(itemprice);
+		Matcher itemstockm = p.matcher(itemstock);
+
+		boolean boo1 = itempricem.matches();
+		boolean boo2 = itemstockm.matches();
+
+		if(!(boo1) || !(boo2) ){
+			setErrorMessage("値段・品数には数字を入れてください");
+
+			result = ERROR;
+
+			return result;
+		}
 
 
 		// 数字は0より大きいかチェック
@@ -54,6 +70,7 @@ public class ItemAddConfirmAction extends ActionSupport implements SessionAware{
 			return result;
 		}else{
 
+		result = SUCCESS;
 		return result;
 
 		}
