@@ -1,9 +1,0 @@
-package com.internousdev.ecsite.dto;
-
-public class ItemListDTO {
-
-	public String id;
-
-	public S
-
-}

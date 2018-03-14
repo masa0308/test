@@ -4,11 +4,12 @@
 <fullyQualifiedTypeName name="java.util.Map"/>
 <fullyQualifiedTypeName name="com.mysql.jdbc.Connection"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.util.DateUtil"/>
+<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.impl.xs.identity.Selector.Matcher"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.util.DBConnector"/>
 <fullyQualifiedTypeName name="java.sql.Connection"/>
 <fullyQualifiedTypeName name="java.sql.PreparedStatement"/>
-<fullyQualifiedTypeName name="java.util.Iterator"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dao.ItemDeleteCompleteDAO"/>
 <fullyQualifiedTypeName name="java.util.regex.Pattern"/>
-<fullyQualifiedTypeName name="com.sun.org.apache.xerces.internal.impl.xs.identity.Selector.Matcher"/>
 <fullyQualifiedTypeName name="java.util.regex.Matcher"/>
 </qualifiedTypeNameHistroy>

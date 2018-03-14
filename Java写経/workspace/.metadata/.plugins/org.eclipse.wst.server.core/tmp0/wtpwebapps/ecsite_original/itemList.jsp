@@ -23,6 +23,10 @@ th{
 td{
    border:solid;
 }
+
+.red{
+     color:red;
+}
 </style>
 </head>
 <body>
@@ -55,7 +59,7 @@ td{
 
 <h3>商品削除</h3>
 <s:if test="errorMessage != ''">
-<s:property value="errorMessage" escape="false" />
+<p class="red"><s:property value="errorMessage" escape="false" /></p>
 </s:if>
 <s:form action="ItemDeleteAction">
 <s:textfield name="itemId" value="" label="商品ID"/><br>

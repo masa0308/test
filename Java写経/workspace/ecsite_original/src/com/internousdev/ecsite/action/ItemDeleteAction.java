@@ -1,5 +1,8 @@
 package com.internousdev.ecsite.action;
 
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 import com.opensymphony.xwork2.ActionSupport;
 
 public class ItemDeleteAction extends ActionSupport{
@@ -14,19 +17,35 @@ public class ItemDeleteAction extends ActionSupport{
 
 	public String execute(){
 
-		if(!(itemId.equals("")) && !(itemName.equals(""))){
-			result = SUCCESS;
-		} else {
+
+        //空白が無いかチェック
+		if((itemId.equals("")) || (itemName.equals(""))){
 			setErrorMessage("未入力の項目があります。");
+
 			result = ERROR;
+
+			return result;
+
 		}
 
-		return result;
+		//idに数字が入っているかチェック
+	    Pattern p = Pattern.compile("^[0-9]*$");
+	    Matcher itemIdm = p.matcher(itemId);
 
+	    boolean boo = itemIdm.matches();
+
+	    if(!boo){
+	    	setErrorMessage("商品IDは数字を入れてください");
+
+	    	result = ERROR;
+
+	    	return result;
+	    }
+
+	    result = SUCCESS;
+
+        return result;
 	}
-
-
-
 	public String getItemId() {
 		return itemId;
 	}

@@ -22,7 +22,7 @@
 商品名:<s:property value="itemName" escape="false" />
 <s:hidden name="itemName" value="%{itemName}"/>
 <br>
-<s:submit value="完了" />
+<s:submit value="削除完了" />
 </s:form>
 </body>
 </html>
