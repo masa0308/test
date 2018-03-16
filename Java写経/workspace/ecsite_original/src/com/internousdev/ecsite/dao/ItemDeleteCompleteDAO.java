@@ -43,6 +43,10 @@ public class ItemDeleteCompleteDAO {
 
 	}
 
+	private DBConnector dbConnector2 = new DBConnector();
+
+	private Connection connection2 = dbConnector2.getConnection();
+
 	private String sql2 = "DELETE FROM item_info_transaction where id = ? AND item_name = ? ";
 
 	public void itemDeleteInfo(String itemId, String itemName) throws SQLException {
@@ -50,7 +54,7 @@ public class ItemDeleteCompleteDAO {
 		int itemIdI = Integer.parseInt(itemId);
 
 		try {
-			PreparedStatement preparedStatement = connection.prepareStatement(sql2);
+			PreparedStatement preparedStatement = connection2.prepareStatement(sql2);
 			preparedStatement.setInt(1, itemIdI);
 			preparedStatement.setString(2, itemName);
 
@@ -59,7 +63,7 @@ public class ItemDeleteCompleteDAO {
 		} catch(Exception e) {
 			e.printStackTrace();
 		} finally{
-			connection.close();
+			connection2.close();
 		}
 	}
 

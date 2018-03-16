@@ -1,5 +1,6 @@
 package com.internousdev.ecsite.action;
 
+import java.util.ArrayList;
 import java.util.Map;
 
 import org.apache.struts2.interceptor.SessionAware;
@@ -24,6 +25,14 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	private BuyItemDAO buyItemDAO = new BuyItemDAO();
 
+	private BuyItemDTO buyItemDTO = new BuyItemDTO();
+
+
+	/**
+	 * アイテム情報格納
+	 */
+	public ArrayList<BuyItemDTO> buyItemList = new ArrayList<BuyItemDTO>();
+
 	public String execute() {
 
 		String result = ERROR;
@@ -40,11 +49,18 @@ public class LoginAction extends ActionSupport implements SessionAware{
 		}else if(((LoginDTO) session.get("loginUser")).getLoginFlg()) {
 			result = SUCCESS;
 
-			BuyItemDTO buyItemDTO = buyItemDAO.getBuyItemInfo();
+			buyItemList = buyItemDAO.getBuyItemInfo();
 			session.put("login_user_id", loginDTO.getLoginId());
 			session.put("id", buyItemDTO.getId());
-			session.put("buyItem_name", buyItemDTO.getItemName());
-			session.put("buyItem_price", buyItemDTO.getItemPrice());
+			session.put("buyItemList", buyItemList);
+
+			/**
+			 * session.put("id", buyItemDTO.getId());
+			 * session.put("buyItem_name", buyItemDTO.getItemName());
+			 * session.put("buyItem_price", buyItemDTO.getItemPrice());
+			 * session.put("buyItem_list", buyItemDTO.getItemPrice());
+			 */
+
 
 		}
 		return result;

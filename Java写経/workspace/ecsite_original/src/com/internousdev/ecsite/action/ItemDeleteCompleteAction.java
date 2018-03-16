@@ -14,6 +14,8 @@ public class ItemDeleteCompleteAction extends ActionSupport {
 
 	private String result;
 
+    private String errorMessage;
+
 	private ItemDeleteCompleteDAO itemDeleteCompleteDAO = new ItemDeleteCompleteDAO();
 
 	private ItemDeleteCompleteDTO itemDeleteCompleteDTO = new ItemDeleteCompleteDTO();
@@ -25,12 +27,16 @@ public class ItemDeleteCompleteAction extends ActionSupport {
 
     public String execute() throws SQLException {
 
-    	//削除以来のアイテムが実際に在るかチェック
+    	//削除依頼のアイテムが実際に在るかチェック
     	itemDeleteCompleteDTO = itemDeleteCompleteDAO.itemMatchInfo(itemId, itemName);
 
-    	if(!(itemId.equals(itemDeleteCompleteDTO.getItemId())) || !(itemName.equals(itemDeleteCompleteDTO.getItemName()))){
+    	String itemIdm = String.valueOf(itemDeleteCompleteDTO.getItemId());
+
+    	if(!(itemId.equals(itemIdm)) || !(itemName.equals(itemDeleteCompleteDTO.getItemName()))){
 
     		result = ERROR;
+
+    		setErrorMessage("ID又は商品名が間違っています。");
 
     		return result;
     	}
@@ -59,6 +65,16 @@ public class ItemDeleteCompleteAction extends ActionSupport {
 
 	public void setItemName(String itemName) {
 		this.itemName = itemName;
+	}
+
+
+	public String getErrorMessage() {
+		return errorMessage;
+	}
+
+
+	public void setErrorMessage(String errorMessage) {
+		this.errorMessage = errorMessage;
 	}
 
 }
