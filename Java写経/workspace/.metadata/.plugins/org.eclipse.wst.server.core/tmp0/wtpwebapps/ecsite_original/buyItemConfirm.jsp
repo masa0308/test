@@ -30,6 +30,29 @@
 			<p>BuyItemConfirm</p>
 		<div>
 			<s:form>
+
+			<table>
+			<thead>
+			<tr><th>商品名</th>
+				<th>値段</th>
+				<th>購入個数</th>
+				<th>支払い方法</th>
+			</tr>
+			</thead>
+			<tbody>
+			<s:iterator value="#session.buyItemDTOList">
+			<tr>
+			<td><s:property value="itemName" /></td>
+			<td><s:property value="itemPrice" /><span>円</span></td>
+			<td><s:property value="count" /><span>個</span></td>
+			<td><s:property value="pay" /></td>
+			</tr>
+			</s:iterator>
+
+			<s:property value="#session.total_price" />
+			</tbody>
+			</table>
+			<!--
 				<tr>
 					<td>商品名</td>
 					<td><s:property value="session.buyItem_name" /></td>
@@ -51,6 +74,7 @@
 						<br>
 					</td>
 				</tr>
+				  -->
 				<tr>
 					<td><input type="button" value="戻る" onclick="submitAction('HomeAction')" /></td>
 					<td><input type="button" value="完了" onclick="submitAction('BuyItemConfirmAction')" /></td>

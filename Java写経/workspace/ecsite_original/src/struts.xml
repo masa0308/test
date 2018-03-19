@@ -6,6 +6,8 @@
 <!-- Strutsの詳細設定 -->
 <struts>
 	<constant name="struts.devMode" value="true" />
+	<constant name="struts.ui.theme" value="simple" />
+
 	<!-- 対象のpackageを設定 -->
 	<package name="com.internousdev.ecsite.action" extends="struts-default">
 
@@ -127,6 +129,8 @@
 		    <result name="success">itemDeleteComplete.jsp</result>
 		    <result name="error">itemDelete.jsp</result>
 		</action>
+
+
 
 	</package>
 </struts>

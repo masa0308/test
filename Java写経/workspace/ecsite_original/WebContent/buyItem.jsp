@@ -36,9 +36,9 @@ td{
 <th>支払い方法<th>
 </tr>
 
-<s:iterator value="session.buyItemList">
+<s:iterator value="session.buyItemList" status="st">
 <tr>
-<td><s:checkbox name="checkList" value="checked" fieldValue="%{id}"/></td>
+<td><s:checkbox name="checkList" value="checked" fieldValue="%{#st.count}"/></td>
 <td><s:property value="itemName" /></td>
 <td><s:property value="itemPrice" /></td>
 <td>
@@ -50,16 +50,27 @@ td{
 <option value="5">5</option>
 </select></td>
 <td>
+<!--
+<s:iterator status="st">
+<s:radio name="pay" list="#{1:'現金払い',2:'クレジットカード'}" value='<s:property value="#st.count"/>'>
+</s:radio>
+</s:iterator>
 <input type="radio" name="pay" value="1" checked="checked">現金払い
 <input type="radio" name="pay" value="2">クレジットカード
+ -->
 </td>
 </tr>
+<s:hidden name="itemName" value="%{itemName}" />'/>
+<s:hidden name="itemPrice" value="%{itemPrice}" />'/>
 </s:iterator>
 </table>
+
+<s:radio name="pay" list="#{1:'現金払い',2:'クレジットカード'}" value='<s:property value="#st.count"/>'/>
+
 <s:submit value="購入"/>
 </s:form>
 前画面に戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
 マイページは<a href='<s:url action="MyPageAction" />'>こちら</a>
-
+商品検索は<a href='<s:url action="ItemSearchAction" />'>こちら</a>
 </body>
 </html>

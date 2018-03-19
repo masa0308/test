@@ -14,7 +14,7 @@
 <fullyQualifiedTypeName name="java.util.regex.Matcher"/>
 <fullyQualifiedTypeName name="java.util.Collection"/>
 <fullyQualifiedTypeName name="java.util.ArrayList"/>
-<fullyQualifiedTypeName name="java.util.List"/>
-<fullyQualifiedTypeName name="com.internousdev.ecsite.dto.BuyItemDTO"/>
 <fullyQualifiedTypeName name="com.internousdev.ecsite.action.BuyItemAction"/>
+<fullyQualifiedTypeName name="com.internousdev.ecsite.dto.BuyItemDTO"/>
+<fullyQualifiedTypeName name="java.util.List"/>
 </qualifiedTypeNameHistroy>
