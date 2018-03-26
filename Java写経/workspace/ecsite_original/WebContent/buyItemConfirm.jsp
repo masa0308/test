@@ -37,6 +37,7 @@
 				<th>値段</th>
 				<th>購入個数</th>
 				<th>支払い方法</th>
+				<th>各合計</th>
 			</tr>
 			</thead>
 			<tbody>
@@ -46,10 +47,15 @@
 			<td><s:property value="itemPrice" /><span>円</span></td>
 			<td><s:property value="count" /><span>個</span></td>
 			<td><s:property value="pay" /></td>
+			<td><s:property value="eachTotal" />円</td>
 			</tr>
 			</s:iterator>
+            <tr>
+            <td>
+			合計金額:<s:property value="#session.total_price" />
+			</td>
+			</tr>
 
-			<s:property value="#session.total_price" />
 			</tbody>
 			</table>
 			<!--

@@ -12,6 +12,8 @@ public class BuyItemDTO {
 
 	public String pay;
 
+	public String eachTotal;
+
 	public String getItemName() {
 		return itemName;
 	}
@@ -50,6 +52,14 @@ public class BuyItemDTO {
 
 	public void setPay(String pay) {
 		this.pay = pay;
+	}
+
+	public String getEachTotal() {
+		return eachTotal;
+	}
+
+	public void setEachTotal(String eachTotal) {
+		this.eachTotal = eachTotal;
 	}
 
 

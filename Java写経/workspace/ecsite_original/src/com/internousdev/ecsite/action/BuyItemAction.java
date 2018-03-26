@@ -22,6 +22,8 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 
 	private String pay;
 
+	private int eachTotals;
+
 	public Map<String, Object> session;
 
 	public String execute() {
@@ -54,15 +56,22 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 			dto.setItemName(itemNameList[Integer.parseInt(check) -1 ].toString());
 			dto.setItemPrice(itemPriceList[Integer.parseInt(check) -1].toString());
 			dto.setCount(countList[Integer.parseInt(check) -1].toString());
-			String payment;
-			if(payList[0].toString().equals("1")){
-				payment = "現金払い";
-				dto.setPay(payment);
-			}else {
 
-				payment = "クレジットカード";
-				dto.setPay(payment);
-			}
+			String payment;
+				if(payList[Integer.parseInt(check)-1].equals("1")){
+					payment = "現金払い";
+					dto.setPay(payment);
+				}else {
+
+					payment = "クレジットカード";
+					dto.setPay(payment);
+				}
+
+			eachTotals = Integer.parseInt(countList[Integer.parseInt(check) -1]) * Integer.parseInt(itemPriceList[Integer.parseInt(check) -1]);
+			String eachTotal = Integer.toString(eachTotals);
+
+			dto.setEachTotal(eachTotal);
+
 			buyItemDTOList.add(dto);
 
 //			int intCount = Integer.parseInt(count);
@@ -213,6 +222,14 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 
 	public void setSession(Map<String, Object> session) {
 		this.session = session;
+	}
+
+	public int getEachTotals() {
+		return eachTotals;
+	}
+
+	public void setEachTotals(int eachTotals) {
+		this.eachTotals = eachTotals;
 	}
 
 

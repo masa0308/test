@@ -50,6 +50,11 @@ td{
 <option value="5">5</option>
 </select></td>
 <td>
+<select name="pay">
+<option value="1" selected="selected">現金払い</option>
+<option value="2">クレジットカード</option>
+</select>
+
 <!--
 <s:iterator status="st">
 <s:radio name="pay" list="#{1:'現金払い',2:'クレジットカード'}" value='<s:property value="#st.count"/>'>
@@ -60,13 +65,13 @@ td{
  -->
 </td>
 </tr>
-<s:hidden name="itemName" value="%{itemName}" />'/>
-<s:hidden name="itemPrice" value="%{itemPrice}" />'/>
+<s:hidden name="itemName" value="%{itemName}" />
+<s:hidden name="itemPrice" value="%{itemPrice}" />
 </s:iterator>
 </table>
-
+<!--
 <s:radio name="pay" list="#{1:'現金払い',2:'クレジットカード'}" value='<s:property value="#st.count"/>'/>
-
+-->
 <s:submit value="購入"/>
 </s:form>
 前画面に戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
