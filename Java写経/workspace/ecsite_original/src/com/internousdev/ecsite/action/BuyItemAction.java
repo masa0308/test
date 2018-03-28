@@ -12,6 +12,8 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyItemAction extends ActionSupport implements SessionAware {
 
+	private String id;
+
 	private String itemName;
 
 	private String itemPrice;
@@ -24,16 +26,20 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 
 	private int eachTotals;
 
+	private String eachTotal;
+
 	public Map<String, Object> session;
 
 	public String execute() {
 		String result = SUCCESS;
 
-		System.out.println(pay);
+		System.out.println("pay = " + pay);
+		System.out.println("itemName = " + itemName);
+		System.out.println("itemPrice = " + itemPrice);
+		System.out.println("count = " + count);
+		System.out.println("id = " + id);
 
-		System.out.println(itemName);
-		System.out.println(itemPrice);
-		System.out.println(count);
+		String[] idList = id.split(", ",0);
 		String[] itemNameList = itemName.split(", ",0);
 		String[] itemPriceList = itemPrice.split(", ",0);
 		String[] countList = String.valueOf(count).split(", ",0);
@@ -53,6 +59,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 		for(String check : checkList){
 			System.out.println(check);
 			BuyItemDTO dto = new BuyItemDTO();
+			dto.setId(Integer.parseInt(idList[Integer.parseInt(check) -1 ].toString()));
 			dto.setItemName(itemNameList[Integer.parseInt(check) -1 ].toString());
 			dto.setItemPrice(itemPriceList[Integer.parseInt(check) -1].toString());
 			dto.setCount(countList[Integer.parseInt(check) -1].toString());
@@ -230,6 +237,22 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 
 	public void setEachTotals(int eachTotals) {
 		this.eachTotals = eachTotals;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+	public String getEachTotal() {
+		return eachTotal;
+	}
+
+	public void setEachTotal(String eachTotal) {
+		this.eachTotal = eachTotal;
 	}
 
 

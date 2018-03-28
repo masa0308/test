@@ -48,6 +48,13 @@
 			<td><s:property value="count" /><span>個</span></td>
 			<td><s:property value="pay" /></td>
 			<td><s:property value="eachTotal" />円</td>
+			<s:hidden name="id" value="%{id}"/>
+			<s:hidden name="itemName" value="%{itemName}"/>
+			<s:hidden name="itemPrice" value="%{itemPrice}"/>
+			<s:hidden name="count" value="%{count}"/>
+			<s:hidden name="pay" value="%{pay}"/>
+			<s:hidden name="eachTotal" value="%{eachTotal}"/>
+			<s:hidden name="totalPrice" value="%{#session.total_price}" />
 			</tr>
 			</s:iterator>
             <tr>

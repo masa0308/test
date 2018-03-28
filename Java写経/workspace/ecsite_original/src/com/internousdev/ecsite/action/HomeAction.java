@@ -22,10 +22,10 @@ public class HomeAction extends ActionSupport implements SessionAware{
 		String result = "login";
 		if(session.containsKey("id")) {
 			BuyItemDAO buyItemDAO = new BuyItemDAO();
-			BuyItemDTO buyItemDTO = new BuyItemDTO();
+			//BuyItemDTO buyItemDTO = new BuyItemDTO();
 			buyItemList = buyItemDAO.getBuyItemInfo();
 
-			session.put("id", buyItemDTO.getId());
+			//session.put("id", buyItemDTO.getId());
 
 			session.put("buyItemList", buyItemList);
 			/**

@@ -1,0 +1,132 @@
+package com.internousdev.ecsite.action;
+
+import java.sql.SQLException;
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.internousdev.ecsite.dao.BuyItemCompleteDAO;
+import com.opensymphony.xwork2.ActionSupport;
+
+public class BuyItemConfirmAction extends ActionSupport implements SessionAware{
+
+	public Map<String,Object> session;
+	private String id;
+	private String itemName;
+	private String itemPrice;
+	private String count;
+	private String pay;
+	private String eachTotal;
+	private String totalPrice;
+
+
+	private BuyItemCompleteDAO buyItemCompleteDAO = new BuyItemCompleteDAO();
+
+	public String execute() throws SQLException {
+
+		String[] idList = id.split(", ",0);
+		String[] itemNameList = itemName.split(", ",0);
+		//String[] itemPriceList = itemPrice.split(", ",0);
+		String[] countList = count.split(", ",0);
+		String[] payList = pay.split(", ",0);
+		String[] eachTotalList = eachTotal.split(", ",0);
+
+		System.out.println("eachTotal = " + eachTotal);
+
+		for(int i=0; i < itemNameList.length; i++){
+			buyItemCompleteDAO.buyItemInfo(
+					idList[i].toString(),
+					session.get("login_user_id").toString(),
+					eachTotalList[i].toString(),
+					countList[i].toString(),
+					payList[i].toString());
+
+
+
+			//idList[i].toString();
+			//String.valueOf(idList[i]);
+
+			//Integer.parseInt(idList[i]);
+		}
+
+		//buyItemCompleteDAO.buyItemInfo(
+				//session.get("id").toString(),
+				//session.get("login_user_id").toString(),
+				//session.get("buyItemDTOList").toString(),
+				//session.get("buyItemDTOList").toString(),
+				//session.get("buyItemDTOList").toString());
+
+		String result = SUCCESS;
+		return result;
+	}
+
+	@Override
+	public void setSession(Map<String,Object> session){
+		this.session = session;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	public String getItemName() {
+		return itemName;
+	}
+
+	public void setItemName(String itemName) {
+		this.itemName = itemName;
+	}
+
+	public String getItemPrice() {
+		return itemPrice;
+	}
+
+	public void setItemPrice(String itemPrice) {
+		this.itemPrice = itemPrice;
+	}
+
+	public String getCount() {
+		return count;
+	}
+
+	public void setCount(String count) {
+		this.count = count;
+	}
+
+	public String getPay() {
+		return pay;
+	}
+
+	public void setPay(String pay) {
+		this.pay = pay;
+	}
+
+	public String getEachTotal() {
+		return eachTotal;
+	}
+
+	public void setEachTotal(String eachTotal) {
+		this.eachTotal = eachTotal;
+	}
+
+	public String getTotalPrice() {
+		return totalPrice;
+	}
+
+	public void setTotalPrice(String totalPrice) {
+		this.totalPrice = totalPrice;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
+	}
+
+
+
+
+
+}

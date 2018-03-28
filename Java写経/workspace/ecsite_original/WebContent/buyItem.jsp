@@ -39,6 +39,7 @@ td{
 <s:iterator value="session.buyItemList" status="st">
 <tr>
 <td><s:checkbox name="checkList" value="checked" fieldValue="%{#st.count}"/></td>
+<%-- <td><s:property value="id" /></td> --%>
 <td><s:property value="itemName" /></td>
 <td><s:property value="itemPrice" /></td>
 <td>
@@ -65,6 +66,7 @@ td{
  -->
 </td>
 </tr>
+<s:hidden name="id" value="%{id}" />
 <s:hidden name="itemName" value="%{itemName}" />
 <s:hidden name="itemPrice" value="%{itemPrice}" />
 </s:iterator>
