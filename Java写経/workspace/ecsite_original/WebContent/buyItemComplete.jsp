@@ -19,5 +19,6 @@
 <p>購入手続きが完了致しました。</p>
 <a href='<s:url action="MyPageAction" />'>マイページ</a>から購入履歴の確認が可能です。<br>
 Homeへ戻る場合は<a href='<s:url action="GoHomeAction" />'>こちら</a>
+
 </body>
 </html>

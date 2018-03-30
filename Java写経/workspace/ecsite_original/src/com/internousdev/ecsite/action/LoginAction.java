@@ -25,7 +25,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 	private BuyItemDAO buyItemDAO = new BuyItemDAO();
 
-	//private BuyItemDTO buyItemDTO = new BuyItemDTO();
+	private BuyItemDTO buyItemDTO = new BuyItemDTO();
 
 
 	/**
@@ -51,7 +51,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 
 			buyItemList = buyItemDAO.getBuyItemInfo();
 			session.put("login_user_id", loginDTO.getLoginId());
-			//session.put("id", buyItemDTO.getId());
+			session.put("id", buyItemDTO.getId());
 			session.put("buyItemList", buyItemList);
 
 			/**

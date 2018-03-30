@@ -26,9 +26,9 @@
 追加したい商品名、値段、品数を入力してください。
 <br>
 <s:form action="ItemAddConfirmAction"><br>
-<s:textfield name="itemname" value="" label="商品名"/><br>
-<s:textfield name="itemprice" value="" label="値段" /><br>
-<s:textfield name="itemstock" value="" label="品数"/><br>
+商品名:<s:textfield name="itemname" value="" label="商品名"/><br>
+&nbsp;&nbsp;&nbsp;&nbsp;値段:<s:textfield name="itemprice" value="" label="値段" /><br>
+&nbsp;&nbsp;&nbsp;&nbsp;品数:<s:textfield name="itemstock" value="" label="品数"/><br>
 <s:submit value="商品登録"/>
 </s:form>
 

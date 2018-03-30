@@ -44,7 +44,7 @@ public class LoginAction extends ActionSupport implements SessionAware{
 	private LoginDAO loginDAO = new LoginDAO();
 
 	/**
-	 * ログイン情報取得DTO
+	 * ログイン情報格納DTO
 	 */
 	private LoginDTO loginDTO = new LoginDTO();
 
@@ -77,7 +77,6 @@ public class LoginAction extends ActionSupport implements SessionAware{
 			session.put("buyItem_price", buyItemDTO.getItemPrice());
 
 			return result;
-
 		}
 
 		return result;

@@ -13,6 +13,8 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class MyPageAction extends ActionSupport implements SessionAware {
 
+	private String id;
+
 	public Map<String ,Object> session;
 
 	private MyPageDAO myPageDAO = new MyPageDAO();
@@ -30,10 +32,21 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 		}
 
 		if(deleteFlg == null) {
-			String item_transaction_id = session.get("id").toString();
+
+			//System.out.println("id = " + id);
+            //String[] idList = id.split(", ",0);
+
+            //String item_transaction_id = session.get("id").toString();
 			String user_master_id = session.get("login_user_id").toString();
 
-			myPageList = myPageDAO.getMyPageUserInfo(item_transaction_id, user_master_id);
+			//for(int i=0; i<idList.length; i++){
+			//MyPageDAO myPageDAO = new MyPageDAO();
+
+			myPageList = myPageDAO.getMyPageUserInfo(user_master_id);
+
+			myPageDAO = null;
+
+
 
 			Iterator<MyPageDTO> iterator = myPageList.iterator();
 			if(!(iterator.hasNext())) {
@@ -51,10 +64,10 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 
 	public void delete() throws SQLException {
 
-		String item_transaction_id = session.get("id").toString();
+		//String item_transaction_id = session.get("id").toString();
 		String user_master_id = session.get("login_user_id").toString();
 
-		int res = myPageDAO.buyItemHistoryDelete(item_transaction_id, user_master_id);
+		int res = myPageDAO.buyItemHistoryDelete(user_master_id);
 
 		if(res > 0) {
 			myPageList = null;
@@ -83,5 +96,13 @@ public class MyPageAction extends ActionSupport implements SessionAware {
 
 	public void setMessage(String message) {
 		this.message = message;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 }

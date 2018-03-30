@@ -26,6 +26,7 @@
 <br>
 品数:<s:property value="itemstock" escape="false" />
 <s:hidden name="itemstock" value="%{itemstock}"/>
+<br>
 <s:submit value="完了"/>
 </s:form>
 戻る場合は<a href='<s:url action="ItemAddAction" />'>こちら</a>

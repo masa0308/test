@@ -40,7 +40,7 @@ public class BuyItemAction extends ActionSupport implements SessionAware {
 		if(pay.equals("1")) {
 
 			payment = "現金払い";
-			session.put("pay", payment);
+			session.put("pay",payment);
 		} else {
 
 			payment = "クレジットカード";

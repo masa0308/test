@@ -8,9 +8,12 @@ import com.opensymphony.xwork2.ActionSupport;
 
 public class BuyItemCompleteAction extends ActionSupport implements SessionAware{
 
+	private String id;
+
 	public  Map<String,Object> session;
 
 	public String execute(){
+		System.out.println("id = " + id);
 
 		String result = SUCCESS;
 		return result;
@@ -19,6 +22,14 @@ public class BuyItemCompleteAction extends ActionSupport implements SessionAware
 	@Override
 	public void setSession(Map<String, Object> session){
 		this.session = session;
+	}
+
+	public String getId() {
+		return id;
+	}
+
+	public void setId(String id) {
+		this.id = id;
 	}
 
 }

@@ -62,8 +62,8 @@ td{
 <p class="red"><s:property value="errorMessage" escape="false" /></p>
 </s:if>
 <s:form action="ItemDeleteAction">
-<s:textfield name="itemId" value="" label="商品ID"/><br>
-<s:textfield name="itemName" value="" label="商品名"/><br>
+商品ID:<s:textfield name="itemId" value="" label="商品ID"/><br>
+商品名:<s:textfield name="itemName" value="" label="商品名"/><br>
 <s:submit value="商品削除"/>
 </s:form>
 </body>
